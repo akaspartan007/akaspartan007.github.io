@@ -220,9 +220,7 @@
     <!-- MOBILE MENU -->
     <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
         <div class="px-4 py-3 space-y-2">
-
             <a href="index.html" class="block py-2 text-gray-600">Home</a>
-
             <div class="py-2">
                 <span class="text-gray-800 font-medium block mb-2">Categories</span>
                 <div class="pl-4 space-y-2 border-l-2 border-gray-100">
@@ -234,8 +232,7 @@
 
             <a href="aboutus.html" class="block py-2 text-gray-600">About Us</a>
             <a href="contact.html" class="block py-2 text-gray-600">Contact</a>
-
-            <a href="#contact" class="block py-2 text-primary font-medium">Get Quote</a>
+            <a href="contac" class="block py-2 text-primary font-medium">Get Quote</a>
         </div>
     </div>
 </nav>
@@ -260,16 +257,24 @@
 
 
     <section class="pt-2 pb-12 max-w-7xl mx-auto px-4 flex gap-10">
+        <button id="openLaptopMobileFilters"
+        class="md:hidden w-full bg-primary text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 mb-5">
+        <i data-feather="sliders" class="w-4 h-4"></i>
+        Filters
+        </button>
+    <!-- PRODUCT GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1" id="laptop-grid">
+    <!-- JS loads laptops -->
+</div>
 
-    <!-- SIDEBAR FILTERS -->
-    <aside class="w-64 bg-white shadow rounded-xl p-5 h-fit sticky top-28">
+</section>
 
+
+<!-- SIDEBAR FILTERS -->
+<aside class="w-64 bg-white shadow rounded-xl p-5 h-fit sticky top-28">
     <h2 class="text-xl font-semibold mb-4 text-accent">Filters</h2>
-<button id="openLaptopMobileFilters"
-    class="md:hidden w-full bg-primary text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 mb-5">
-    <i data-feather="sliders" class="w-4 h-4"></i>
-    Filters
-</button>
+    
+    
     <!-- BRAND -->
     <div class="mb-6">
         <h3 class="font-semibold mb-2">Brand</h3>
@@ -313,167 +318,13 @@
     <button id="laptop-resetFilters" class="mt-3 w-full bg-gray-200 hover:bg-gray-300 py-2 rounded">
         Reset Filters
     </button>
-
 </aside>
 
-
-    <!-- PRODUCT GRID -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1" id="laptop-grid">
-        <!-- JS loads laptops -->
-    </div>
-
-</section>
-    <!-- Products Grid -->
-    <!-- <section class="pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="laptopGrid">
-
-            BUSINESS LAPTOPS
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-category="business">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://static.photos/technology/640x480/801" alt="ThinkPro X15" class="w-full h-full object-cover group-hover:scale-105 duration-500">
-                    <span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Bestseller</span>
-                    <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">Business</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-accent mb-2">ThinkPro X15</h3>
-                    <p class="text-gray-500 text-sm mb-4">15" business laptop with Intel i7, 16GB RAM, and 512GB SSD. Perfect for professionals.</p>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Intel i7</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">16GB RAM</span>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-bold text-primary">$799</span>
-                        <button class="bg-primary text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-blue-600">
-                            Get Quote <i data-feather="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            Gaming Laptop
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-category="gaming">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://static.photos/technology/640x480/802" class="w-full h-full object-cover group-hover:scale-105 duration-500">
-                    <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Gaming</span>
-                    <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">RTX</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-accent mb-2">Vortex G17</h3>
-                    <p class="text-gray-500 text-sm mb-4">17" gaming laptop with RTX 4060, AMD Ryzen 7, 144Hz display. Built for performance.</p>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">RTX 4060</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">144Hz</span>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-bold text-primary">$1,299</span>
-                        <button class="bg-primary text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-blue-600">
-                            Get Quote <i data-feather="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            Ultrabook
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-category="ultrabook">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://static.photos/technology/640x480/803" class="w-full h-full object-cover group-hover:scale-105 duration-500">
-                    <span class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Premium</span>
-                    <span class="absolute top-4 right-4 bg-purple-500 text-white text-xs px-2 py-1 rounded">Ultrabook</span>
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-accent mb-2">AeroSlim 14</h3>
-                    <p class="text-gray-500 text-sm mb-4">Ultra-light 14" laptop with 10-hour battery life and 2.5K display.</p>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">2.5K Display</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">1.1 kg</span>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-bold text-primary">$999</span>
-                        <button class="bg-primary text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-blue-600">
-                            Get Quote <i data-feather="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            Student Laptop
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-category="student">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://static.photos/technology/640x480/804" class="w-full h-full object-cover group-hover:scale-105 duration-500">
-                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Student</span>
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-accent mb-2">EduBook 13</h3>
-                    <p class="text-gray-500 text-sm mb-4">Lightweight 13" laptop ideal for students, online classes, and projects.</p>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">8GB RAM</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">128GB SSD</span>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-bold text-primary">$349</span>
-                        <button class="bg-primary text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-blue-600">
-                            Get Quote <i data-feather="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            Laptop Accessories
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group" data-category="accessories">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://static.photos/technology/640x480/805" class="w-full h-full object-cover group-hover:scale-105 duration-500">
-                    <span class="absolute top-4 right-4 bg-amber-500 text-white text-xs px-2 py-1 rounded">Accessory</span>
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-accent mb-2">Universal Laptop Dock</h3>
-                    <p class="text-gray-500 text-sm mb-4">USB-C docking station with HDMI, USB-A, LAN, and PD charging support.</p>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">USB-C</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">65W PD</span>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-bold text-primary">$89</span>
-                        <button class="bg-primary text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-blue-600">
-                            Get Quote <i data-feather="arrow-right" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        Bulk CTA
-        <div class="mt-16 bg-gradient-to-r from-primary to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white">
-            <h2 class="text-3xl font-bold mb-4">Need Bulk Laptop Pricing?</h2>
-            <p class="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-                Get wholesale discounts for 10+ units. Great for offices, schools, and IT vendors.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="index.html#contact" class="bg-white text-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100">Request Quote</a>
-                <a href="mailto:sales@techtidehub.com" class="bg-white/20 px-8 py-3 rounded-xl font-semibold hover:bg-white/30 backdrop-blur-sm text-white">Email Sales Team</a>
-            </div>
-        </div>
-    </section> -->
-
-    <div id="laptopMobileFilterPopup"
-     class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-end z-[9999]">
-
+<div id="laptopMobileFilterPopup"
+    class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-end z-[9999]">
+    
     <div class="w-full bg-white rounded-t-2xl p-5 max-h-[80vh] overflow-y-auto shadow-xl">
-
+        
         <!-- HEADER -->
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl font-semibold text-accent">Filters</h2>
@@ -481,13 +332,13 @@
                 <i data-feather="x" class="w-6 h-6 text-gray-600"></i>
             </button>
         </div>
-
+        
         <!-- BRAND -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">Brand</h3>
             <div id="mobile-laptop-filter-brand"></div>
         </div>
-
+        
         <!-- AVAILABILITY -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">Availability</h3>
@@ -496,41 +347,40 @@
                 <span>In Stock</span>
             </label>
         </div>
-
+        
         <!-- PRICE -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">Price</h3>
             <input id="mobile-laptop-minPrice" type="number" placeholder="Min" class="w-full mb-2 border rounded px-3 py-1">
             <input id="mobile-laptop-maxPrice" type="number" placeholder="Max" class="w-full border rounded px-3 py-1">
         </div>
-
+        
         <!-- RAM -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">RAM</h3>
             <div id="mobile-laptop-filter-ram"></div>
         </div>
-
+        
         <!-- STORAGE -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">Storage</h3>
             <div id="mobile-laptop-filter-storage"></div>
         </div>
-
+        
         <!-- DISPLAY SIZE -->
         <div class="mb-6">
             <h3 class="font-semibold mb-2">Display Size</h3>
             <div id="mobile-laptop-filter-size"></div>
         </div>
-
+        
         <!-- ACTION BUTTONS -->
         <div class="mt-6 flex gap-3">
             <button id="resetLaptopMobileFilters" class="w-1/2 py-2 bg-gray-200 rounded-lg">Reset</button>
             <button id="applyLaptopMobileFilters" class="w-1/2 py-2 bg-primary text-white rounded-lg">Apply</button>
         </div>
-
+        
     </div>
 </div>
-
     <!-- COMPARE DRAWER -->
 <div id="compareDrawer"
      class="fixed bottom-6 right-6 w-80 bg-white shadow-2xl rounded-2xl border p-4 hidden z-50">

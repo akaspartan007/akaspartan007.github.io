@@ -464,6 +464,11 @@ nav.scrolled {
     #mobileSearchPopup input {
         font-size: 1rem;
     }
+
+    #mobilefiltersPopup {
+        max-height: 85vh;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -495,3 +500,4 @@ nav.scrolled {
 .compare-btn {
     transition: all .2s ease;
 }
+

@@ -157,23 +157,33 @@
     </div>
 </div>
 
+
+
 <!-- MOBILE FILTER POPUP -->
 <div id="mobileFilterPopup"
      class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-end z-[9999]">
-    <div class="w-full bg-white rounded-t-2xl p-5 max-h-[80vh] overflow-y-auto shadow-xl">
 
-        <div class="flex justify-between items-center mb-4">
+    <div class="w-full bg-white rounded-t-2xl p-5 
+                max-h-[85vh] overflow-y-auto shadow-xl">
+
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-4 sticky top-0 bg-white pb-3">
             <h2 class="text-xl font-semibold text-accent">Filters</h2>
-            <button id="closeMobileFilters"><i data-feather="x" class="w-6 h-6"></i></button>
+            <button id="closeMobileFilters">
+                <i data-feather="x" class="w-6 h-6 text-gray-600"></i>
+            </button>
         </div>
 
+        <!-- SCROLLABLE CONTENT -->
         <div class="space-y-6">
 
+            <!-- BRAND -->
             <div>
                 <h3 class="font-semibold mb-2">Brand</h3>
                 <div id="mobile-filter-brand"></div>
             </div>
 
+            <!-- AVAILABILITY -->
             <div>
                 <h3 class="font-semibold mb-2">Availability</h3>
                 <label class="flex items-center gap-2">
@@ -182,12 +192,16 @@
                 </label>
             </div>
 
+            <!-- PRICE -->
             <div>
                 <h3 class="font-semibold mb-2">Price</h3>
-                <input id="mobile-minPrice" type="number" placeholder="Min" class="w-full border rounded px-3 py-1 mb-2">
-                <input id="mobile-maxPrice" type="number" placeholder="Max" class="w-full border rounded px-3 py-1">
+                <input id="mobile-minPrice" type="number" placeholder="Min" 
+                       class="w-full border rounded px-3 py-1 mb-2">
+                <input id="mobile-maxPrice" type="number" placeholder="Max"
+                       class="w-full border rounded px-3 py-1">
             </div>
 
+            <!-- TYPE -->
             <div>
                 <h3 class="font-semibold mb-2">Type</h3>
                 <div id="mobile-filter-type"></div>
@@ -195,10 +209,14 @@
 
         </div>
 
-        <div class="mt-6 flex gap-3">
-            <button id="resetMobileFilters" class="w-1/2 bg-gray-200 py-2 rounded">Reset</button>
-            <button id="applyMobileFilters" class="w-1/2 bg-primary text-white py-2 rounded">Apply</button>
+        <!-- BUTTONS -->
+        <div class="mt-6 flex gap-3 sticky bottom-0 bg-white pt-3 pb-1">
+            <button id="resetMobileFilters" 
+                    class="w-1/2 bg-gray-200 py-2 rounded">Reset</button>
+            <button id="applyMobileFilters" 
+                    class="w-1/2 bg-primary text-white py-2 rounded">Apply</button>
         </div>
+
     </div>
 </div>
 

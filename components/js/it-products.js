@@ -397,3 +397,76 @@ const msResults = document.getElementById("mobileSearchResults");
 if (typeof handleSearch === "function") {
     handleSearch(msInput, msResults);
 }
+
+
+// ======================================================
+// MOBILE MENU TOGGLE
+// ======================================================
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+}
+
+
+
+// ======================================================
+// MOBILE SEARCH POPUP TOGGLE
+// ======================================================
+const mobileSearchBtn = document.getElementById("mobileSearchBtn");
+const mobileSearchPopup = document.getElementById("mobileSearchPopup");
+const mobileSearchClose = document.getElementById("mobileSearchClose");
+
+if (mobileSearchBtn) {
+    mobileSearchBtn.addEventListener("click", () => {
+        mobileSearchPopup.classList.remove("hidden");
+    });
+}
+
+if (mobileSearchClose) {
+    mobileSearchClose.addEventListener("click", () => {
+        mobileSearchPopup.classList.add("hidden");
+    });
+}
+
+// Close popup when clicking outside input
+if (mobileSearchPopup) {
+    mobileSearchPopup.addEventListener("click", (e) => {
+        if (e.target === mobileSearchPopup) {
+            mobileSearchPopup.classList.add("hidden");
+        }
+    });
+}
+
+
+
+// ======================================================
+// MOBILE FILTER POPUP TOGGLE  (THE NEW FIXED PART)
+// ======================================================
+const openMobileFilters = document.getElementById("openMobileFilters");
+const mobileFilterPopup = document.getElementById("mobileFilterPopup");
+const closeMobileFilters = document.getElementById("closeMobileFilters");
+
+if (openMobileFilters) {
+    openMobileFilters.addEventListener("click", () => {
+        mobileFilterPopup.classList.remove("hidden");
+    });
+}
+
+if (closeMobileFilters) {
+    closeMobileFilters.addEventListener("click", () => {
+        mobileFilterPopup.classList.add("hidden");
+    });
+}
+
+// close popup if user clicks outside the filter box
+if (mobileFilterPopup) {
+    mobileFilterPopup.addEventListener("click", (e) => {
+        if (e.target === mobileFilterPopup) {
+            mobileFilterPopup.classList.add("hidden");
+        }
+    });
+}
