@@ -197,7 +197,7 @@ function enableZoom(img) {
 // 5) SIMILAR PRODUCTS (Category Based)
 // ---------------------------------------------------------------
 function loadSimilarProducts() {
-  const wrapper = $("similar-products");
+  const wrapper = document.getElementById("similar-products");
   wrapper.innerHTML = "";
 
   const normalize = (str) => str.toLowerCase().trim();
@@ -223,13 +223,13 @@ function loadSimilarProducts() {
   });
 
   // Slider arrows
-  $("similar-prev").onclick = () =>
+  document.getElementById("similar-prev").onclick = () =>
     wrapper.scrollBy({ left: -300, behavior: "smooth" });
 
-  $("similar-next").onclick = () =>
+  document.getElementById("similar-next").onclick = () =>
     wrapper.scrollBy({ left: 300, behavior: "smooth" });
 
-  // Drag to scroll
+  // Drag scroll
   let isDown = false;
   let startX, scrollLeft;
 
@@ -317,43 +317,29 @@ document.querySelectorAll(".mobile-tab-option").forEach((btn) => {
 // 7) ADD TO COMPARE SYSTEM
 // ---------------------------------------------------------------
 function setupCompareButton(product) {
-  const btn = document.getElementById("addToCompare");
+    const btn = document.getElementById("product-compare-btn");
 
-  // Load current compare list
-  let compareList = JSON.parse(localStorage.getItem("compareList") || "[]");
-
-  // Already added?
-  if (compareList.some(p => p.id === product.id)) {
-    btn.innerText = "✓ Added to Compare";
-    btn.classList.add("bg-primary", "text-white");
-  }
-
-  btn.onclick = () => {
-    let list = JSON.parse(localStorage.getItem("compareList") || "[]");
-
-    // Max 3 items
-    if (list.length >= 3) {
-      alert("You can only compare up to 3 products.");
-      return;
+    if (!btn) {
+        console.warn("Compare button not found on this page.");
+        return; // Prevent crash
     }
 
-    // Avoid duplicates
-    if (!list.some(p => p.id === product.id)) {
-      list.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        brand: product.brand,
-        image: product.images[0],
-        specs: product.specs
-      });
+    btn.onclick = () => {
+        let compareItems = JSON.parse(localStorage.getItem("compareList") || "[]");
 
-      localStorage.setItem("compareList", JSON.stringify(list));
+        if (compareItems.includes(product.id)) {
+            alert("Already added to compare!");
+            return;
+        }
+        if (compareItems.length >= 3) {
+            alert("You can only compare up to 3 products!");
+            return;
+        }
 
-      btn.innerText = "✓ Added to Compare";
-      btn.classList.add("bg-primary", "text-white");
-    }
-  };
+        compareItems.push(product.id);
+        localStorage.setItem("compareList", JSON.stringify(compareItems));
+        alert("Added to compare!");
+    };
 }
 
 
