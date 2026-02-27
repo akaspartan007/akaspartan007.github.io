@@ -256,21 +256,10 @@
     </section>
 
 
+    
     <section class="pt-2 pb-12 max-w-7xl mx-auto px-4 flex gap-10">
-        <button id="openLaptopMobileFilters"
-        class="md:hidden w-full bg-primary text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 mb-5">
-        <i data-feather="sliders" class="w-4 h-4"></i>
-        Filters
-        </button>
-    <!-- PRODUCT GRID -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1" id="laptop-grid">
-    <!-- JS loads laptops -->
-</div>
 
-</section>
-
-
-<!-- SIDEBAR FILTERS -->
+        <!-- SIDEBAR FILTERS -->
 <aside class="w-64 bg-white shadow rounded-xl p-5 h-fit sticky top-28">
     <h2 class="text-xl font-semibold mb-4 text-accent">Filters</h2>
     
@@ -319,6 +308,20 @@
         Reset Filters
     </button>
 </aside>
+        <button id="openLaptopMobileFilters"
+        class="md:hidden w-full bg-primary text-white py-3 rounded-lg font-medium flex items-center justify-center gap-2 mb-5">
+        <i data-feather="sliders" class="w-4 h-4"></i>
+        Filters
+        </button>
+    <!-- PRODUCT GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1" id="laptop-grid">
+    <!-- JS loads laptops -->
+</div>
+
+</section>
+
+
+
 
 <div id="laptopMobileFilterPopup"
     class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-end z-[9999]">
